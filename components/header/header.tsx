@@ -5,6 +5,7 @@ import LoginButton from "./login-button";
 import { ThemeDropdown } from "../theme-dropdown";
 import { useSession } from "@/lib/auth-client";
 import AuthUser from "./auth-user";
+import { Button } from "../ui/button";
 
 function Header() {
 	const { isPending, data: session } = useSession();
@@ -20,6 +21,7 @@ function Header() {
 				) : (
 					<LoginButton isPending={isPending} />
 				)}
+				<Button>Add new offer</Button>
 				<ThemeDropdown />
 			</div>
 		</header>

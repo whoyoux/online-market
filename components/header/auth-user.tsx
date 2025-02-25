@@ -37,30 +37,31 @@ export default function AuthUser({ user }: { user: User }) {
 				<DropdownMenuLabel>My Account</DropdownMenuLabel>
 				<DropdownMenuSeparator />
 				<DropdownMenuGroup>
-					<Link href="/dashboard">
-						<DropdownMenuItem>
-							Dashboard
+					<Link href="/#">
+						<DropdownMenuItem disabled>
+							My offers
 							<DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
 						</DropdownMenuItem>
 					</Link>
 					<DropdownMenuItem disabled>
-						Billing
+						Add new offer
 						<DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-					</DropdownMenuItem>
-					<DropdownMenuItem disabled>
-						Settings
-						<DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-					</DropdownMenuItem>
-					<DropdownMenuItem disabled>
-						Keyboard shortcuts
-						<DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
 					</DropdownMenuItem>
 				</DropdownMenuGroup>
 
 				<DropdownMenuSeparator />
-				<DropdownMenuItem>GitHub</DropdownMenuItem>
+
+				<DropdownMenuGroup>
+					<DropdownMenuItem disabled>
+						My messages
+						<DropdownMenuShortcut>⇧⌘M</DropdownMenuShortcut>
+					</DropdownMenuItem>
+				</DropdownMenuGroup>
+
+				<DropdownMenuSeparator />
+
+				<DropdownMenuItem>My account</DropdownMenuItem>
 				<DropdownMenuItem disabled>Support</DropdownMenuItem>
-				<DropdownMenuItem disabled>API</DropdownMenuItem>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem onClick={async () => await signOutAndRedirect()}>
 					Log out

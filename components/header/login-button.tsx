@@ -22,7 +22,7 @@ export default function LoginButton({ isPending }: { isPending: boolean }) {
 			disabled={isPending}
 			onClick={async () => await login()}
 		>
-			Login via Google
+			Sign in
 		</Button>
 	);
 }
