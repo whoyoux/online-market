@@ -3,15 +3,11 @@
 import Link from "next/link";
 import LoginButton from "./login-button";
 import { ThemeDropdown } from "../theme-dropdown";
-// import { useSession } from "@/lib/auth-client";
+import { useSession } from "@/lib/auth-client";
 import AuthUser from "./auth-user";
 
-type Session = null | { user: string };
-
 function Header() {
-	// const { isPending, data: session } = useSession();
-	const session: any = null;
-	const isPending = false;
+	const { isPending, data: session } = useSession();
 
 	return (
 		<header className="w-full max-w-screen-xl mx-auto px-2 py-6 flex justify-between items-center border-b mb-8">

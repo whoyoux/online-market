@@ -1,4 +1,4 @@
-// import type { User } from "better-auth";
+import type { User } from "better-auth";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -12,15 +12,10 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-// import { signOut } from "@/lib/auth-client";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-
-type User = {
-	name: string;
-	image: string;
-};
 
 export default function AuthUser({ user }: { user: User }) {
 	const router = useRouter();
