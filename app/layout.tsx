@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/sonner";
 import Header from "@/components/header/header";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const fontSans = FontSans({
 	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+	variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -28,9 +23,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+			<body className={`${fontSans.variable} font-sans antialiased`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
