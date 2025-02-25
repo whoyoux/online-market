@@ -15,13 +15,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+import { signOut } from "@/lib/auth-client";
 
 export default function AuthUser({ user }: { user: User }) {
 	const router = useRouter();
 	const signOutAndRedirect = async () => {
-		// await signOut();
-		toast.info("TODO: Sign out!");
+		await signOut();
 		router.push("/");
 	};
 	return (
