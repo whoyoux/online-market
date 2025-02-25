@@ -21,7 +21,7 @@ function Header() {
 				) : (
 					<LoginButton isPending={isPending} />
 				)}
-				<Button>Add new offer</Button>
+				<Button variant="outline">Add new offer</Button>
 				<ThemeDropdown />
 			</div>
 		</header>
