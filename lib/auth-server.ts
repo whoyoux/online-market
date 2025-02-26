@@ -10,6 +10,7 @@ import { cache } from "react";
 // 	return session;
 // }
 
+//avoid deduplication of requests
 const getSession = async () =>
 	cache(async () => {
 		console.log("[DEDUP] GetSession")

@@ -38,7 +38,7 @@ export default function AuthUser({ user }: { user: User }) {
 				<DropdownMenuSeparator />
 				<DropdownMenuGroup>
 					<Link href="/#">
-						<DropdownMenuItem disabled>
+						<DropdownMenuItem>
 							My offers
 							<DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
 						</DropdownMenuItem>
@@ -60,7 +60,9 @@ export default function AuthUser({ user }: { user: User }) {
 
 				<DropdownMenuSeparator />
 
-				<DropdownMenuItem>My account</DropdownMenuItem>
+				<Link href="/account">
+					<DropdownMenuItem>My account</DropdownMenuItem>
+				</Link>
 				<DropdownMenuItem disabled>Support</DropdownMenuItem>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem onClick={async () => await signOutAndRedirect()}>
