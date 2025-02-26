@@ -7,7 +7,6 @@ export function cn(...inputs: ClassValue[]) {
 
 
 export async function getBase64(imageUrl: string): Promise<string> {
-  "use cache";
   console.log("[UTILS] Generating base64 from image source...")
   try {
       const response = await fetch(imageUrl);
