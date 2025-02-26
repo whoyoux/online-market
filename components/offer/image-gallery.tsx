@@ -26,6 +26,7 @@ export const ImageGallery = ({ images }: ImageGalleryProps) => {
 					quality={100}
 					placeholder="blur"
 					blurDataURL={selectedImage.blurDataUrl}
+					sizes="(max-width: 768px) 100vw, 768px"
 				/>
 			</div>
 
@@ -49,6 +50,7 @@ export const ImageGallery = ({ images }: ImageGalleryProps) => {
 							className="object-cover"
 							placeholder="blur"
 							blurDataURL={image.blurDataUrl}
+							sizes="(max-width: 768px) 16vw, 100px"
 						/>
 					</button>
 				))}
