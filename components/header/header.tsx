@@ -29,9 +29,7 @@ function Header() {
 				) : (
 					<LoginButton isPending={isPending} />
 				)}
-				<Button variant="outline" asChild>
-					<Link href="/offer/create">Dodaj ogłoszenie</Link>
-				</Button>
+
 				<ThemeDropdown />
 			</div>
 		</header>
