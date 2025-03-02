@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { CategoryBreadcrumb } from "@/components/category-breadcrumb";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Ratings } from "@/components/ui/ratings";
 
 export type OfferImage = {
 	id: string;
@@ -91,6 +93,12 @@ const OfferPage = async () => {
 					<div>
 						<h4 className="text-2xl font-semibold">$64.99</h4>
 					</div>
+					<SellerCard
+						username="whoyoux"
+						userid="dawawdawd"
+						userimg="https://cdn.discordapp.com/avatars/610202164819787813/5fcd2c21d968841468932f941d541bbe.png"
+						score={9}
+					/>
 					<Button>Contact with seller</Button>
 				</div>
 			</div>
@@ -99,6 +107,34 @@ const OfferPage = async () => {
 				<DescriptionTest />
 			</div>
 		</div>
+	);
+};
+
+type SellerCardProps = {
+	username: string;
+	userid: string;
+	userimg: string;
+	score: number;
+};
+
+const SellerCard = ({ username, score, userid, userimg }: SellerCardProps) => {
+	return (
+		<section className="w-full flex flex-col space-y-4">
+			<div className="flex w-full items-center justify-between">
+				<span>Sprzedający</span>
+				<div className="flex items-center gap-2">
+					<span className="font-medium">{username}</span>
+					<Avatar>
+						<AvatarImage src={userimg} alt="User avatar" />
+						<AvatarFallback>{username.slice(0, 2)}</AvatarFallback>
+					</Avatar>
+				</div>
+			</div>
+			<div className="flex w-full items-center justify-between">
+				<span>Oceny sprzedającego</span>
+				<Ratings rating={2.5} variant="yellow" />
+			</div>
+		</section>
 	);
 };
 
