@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { Toaster } from "@/components/ui/sonner";
 import Header from "@/components/header/header";
+import { Footer } from "@/components/footer";
 
 const fontSans = FontSans({
 	subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
 				>
 					<Header />
 					<main className="max-w-screen-xl mx-auto px-2">{children}</main>
+					<Footer />
 					<Toaster richColors />
 				</ThemeProvider>
 			</body>

@@ -66,3 +66,50 @@ model User {
   @@unique([email])
   @@map("user")
 }
+
+model Category {
+  id   String @id @default(cuid())
+  name String
+  slug String @unique
+
+  parent   Category? @relation("CategoryToSubcategories", fields: [parentId], references: [id])
+  parentId String?
+
+  children Category[] @relation("CategoryToSubcategories")
+
+  items Item[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Item {
+  id String @id @default(cuid())
+
+  title       String
+  description String
+  price       Decimal
+
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+
+  images ItemImage[]
+  views  Int         @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ItemImage {
+  id String @id @default(cuid())
+
+  item   Item   @relation(fields: [itemId], references: [id])
+  itemId String
+
+  url       String
+  alt       String
+  isPrimary Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
