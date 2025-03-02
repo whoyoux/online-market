@@ -3,14 +3,6 @@
 import { ImageGallery } from "@/components/offer/image-gallery";
 import { getBase64 } from "@/lib/utils";
 
-import {
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbList,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { CategoryBreadcrumb } from "@/components/category-breadcrumb";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -141,32 +133,45 @@ const SellerCard = ({ username, score, userid, userimg }: SellerCardProps) => {
 const DescriptionTest = () => {
 	return (
 		<div className="prose dark:prose-invert">
-			<h1>h1 test</h1>
-			<h2>h2 test</h2>
-			<h3>h3 test</h3>
-			<pre>code test</pre>
+			<h1>iPhone 16 Pro Max - Idealny stan!</h1>
+
 			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque odio
-				nisi animi accusantium molestiae? Deserunt rem consectetur voluptatibus
-				alias minima iure, amet ducimus nobis voluptatum repellat, molestiae
-				dolores, aperiam provident.
+				Sprzedam mojego iPhone 16 Pro Max w kolorze Natural Titanium, używanego
+				zaledwie 3 miesiące. Telefon jest w idealnym stanie technicznym i
+				wizualnym, bez najmniejszych rys czy uszkodzeń.
 			</p>
-			<span>Unordered list</span>
+
+			<h2>Specyfikacja techniczna:</h2>
 			<ul>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
+				<li>Pamięć: 512GB</li>
+				<li>Kolor: Natural Titanium</li>
+				<li>Bateria: 100% pojemności</li>
+				<li>System: iOS 18.2</li>
+				<li>Procesor: A18 Pro</li>
 			</ul>
-			<span>Ordered list</span>
-			<ol>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-				<li>hello</li>
-			</ol>
+
+			<h2>W zestawie otrzymasz:</h2>
+			<ul>
+				<li>iPhone 16 Pro Max</li>
+				<li>Oryginalne pudełko</li>
+				<li>Kabel USB-C</li>
+				<li>Dokumenty zakupu (gwarancja do 12.2025)</li>
+				<li>Etui ochronne Spigen</li>
+			</ul>
+
+			<h3>Stan techniczny:</h3>
+			<p>
+				Telefon jest w 100% sprawny, wszystkie funkcje działają bez zarzutu.
+				Bateria trzyma jak nowa, nie była nigdy wymieniana. Ekran chroniony był
+				szkłem hartowanym od pierwszego dnia użytkowania.
+			</p>
+
+			<h3>Powód sprzedaży:</h3>
+			<p>
+				Sprzedaję ponieważ przesiadam się na model Ultra. Telefon kupiony w
+				polskim autoryzowanym salonie Apple. Możliwość sprawdzenia i
+				przetestowania na miejscu. Zapraszam do kontaktu!
+			</p>
 		</div>
 	);
 };
