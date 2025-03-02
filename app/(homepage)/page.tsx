@@ -23,6 +23,7 @@ export default function Home() {
 					fill
 					className="object-cover"
 					priority
+					sizes="(max-width: 1280px) 100vw, 1280px"
 				/>
 				<div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-start p-12">
 					<h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
@@ -53,6 +54,7 @@ export default function Home() {
 								alt={category.name}
 								fill
 								className="object-cover transition group-hover:scale-105"
+								sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70" />
 							<span className="absolute bottom-4 left-4 text-lg font-medium text-white">
