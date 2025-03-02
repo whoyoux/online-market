@@ -18,12 +18,18 @@ const ratingVariants = {
 	},
 };
 
+// Definiujemy typ dla ikony, który zawiera właściwość size
+interface IconProps {
+	size?: number;
+	className?: string;
+}
+
 interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
 	rating: number;
 	totalStars?: number;
 	size?: number;
 	fill?: boolean;
-	Icon?: React.ReactElement;
+	Icon?: React.ReactElement<IconProps>;
 	variant?: keyof typeof ratingVariants;
 }
 
@@ -52,6 +58,7 @@ const Ratings = ({ ...props }: RatingsProps) => {
 		<div className={cn("flex items-center gap-2")} {...props}>
 			{[...Array(fullStars)].map((_, i) =>
 				React.cloneElement(Icon, {
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					key: i,
 					size,
 					className: cn(
@@ -76,7 +83,7 @@ interface PartialStarProps {
 	fillPercentage: number;
 	size: number;
 	className?: string;
-	Icon: React.ReactElement;
+	Icon: React.ReactElement<IconProps>;
 }
 const PartialStar = ({ ...props }: PartialStarProps) => {
 	const { fillPercentage, size, className, Icon } = props;
