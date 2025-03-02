@@ -3,15 +3,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { OfferCard } from "@/components/ui/offer-card";
 
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-
 export default function Home() {
 	return (
 		<div className="flex flex-col gap-12 py-8">
@@ -46,7 +37,8 @@ export default function Home() {
 					{categories.map((category) => (
 						<Link
 							key={category.id}
-							href={`/offer/category/${category.id}`}
+							// href={`/offer/category/${category.id}`}
+							href={"/offer"}
 							className="group relative h-40 rounded-lg overflow-hidden shadow-md transition hover:shadow-lg"
 						>
 							<Image

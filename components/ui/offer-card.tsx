@@ -20,7 +20,8 @@ export function OfferCard({
 	className,
 }: OfferCardProps) {
 	return (
-		<Link href={`/offer/${id}`} className={className}>
+		// <Link href={`/offer/${id}`} className={className}>
+		<Link href={"/offer"} className={className}>
 			<Card className="group overflow-hidden h-full hover:shadow-md transition bg-muted flex flex-col">
 				<div className="relative h-48">
 					<Image
