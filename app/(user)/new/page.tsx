@@ -62,10 +62,11 @@ const NewOfferPage = () => {
 									<Textarea
 										placeholder="Used IPhone 15 Pro Max for sell..."
 										{...field}
+										rows={6}
 									/>
 								</FormControl>
 								<FormDescription>
-									This is your offer public display description.
+									there is gonna be a wyswig editor, maybe like notion, idk yet
 								</FormDescription>
 								<FormMessage />
 							</FormItem>

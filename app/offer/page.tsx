@@ -7,6 +7,10 @@ import { Button } from "@/components/ui/button";
 import { CategoryBreadcrumb } from "@/components/category-breadcrumb";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Ratings } from "@/components/ui/ratings";
+import { Textarea } from "@/components/ui/textarea";
+
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { AlertCircle } from "lucide-react";
 
 export type OfferImage = {
 	id: string;
@@ -21,37 +25,37 @@ async function getImagesWithBlur() {
 		{
 			id: "1",
 			isPrimary: true,
-			src: "https://placehold.co/600x400/webp?text=1",
+			src: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Opis obrazu 1",
 		},
 		{
 			id: "2",
 			isPrimary: false,
-			src: "https://placehold.co/600x400/webp?text=2",
+			src: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Opis obrazu 2",
 		},
 		{
 			id: "3",
 			isPrimary: false,
-			src: "https://placehold.co/600x400/webp?text=3",
+			src: "https://images.unsplash.com/photo-1611791484670-ce19b801d192?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Opis obrazu 3",
 		},
 		{
 			id: "4",
 			isPrimary: false,
-			src: "https://placehold.co/600x400/webp?text=4",
+			src: "https://images.unsplash.com/photo-1519923834699-ef0b7cde4712?q=80&w=2575&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Opis obrazu 4",
 		},
 		{
 			id: "5",
 			isPrimary: false,
-			src: "https://placehold.co/600x400/webp?text=5",
+			src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Opis obrazu 5",
 		},
 		{
 			id: "6",
 			isPrimary: false,
-			src: "https://placehold.co/600x400/webp?text=6",
+			src: "https://images.unsplash.com/photo-1591054333829-3a3ce5d57fca?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			alt: "Opis obrazu 6",
 		},
 	];
@@ -80,18 +84,34 @@ const OfferPage = async () => {
 						<h2 className="text-2xl font-semibold">
 							Telefon IPhone 16 Pro Max
 						</h2>
-						<CategoryBreadcrumb categoryId="cm7rwgq7l0005am749rerf2dp" />
+						<CategoryBreadcrumb categoryId="cm7szeia70005amf4fsyozx4q" />
 					</div>
-					<div>
-						<h4 className="text-2xl font-semibold">$64.99</h4>
-					</div>
+
+					<section className="w-full flex flex-col space-y-2">
+						<div className="flex w-full items-center justify-between">
+							<span className="text-muted-foreground">Cena</span>
+							<span className="font-medium">65.99 zł</span>
+						</div>
+						<div className="flex w-full items-center justify-between">
+							<span className="text-muted-foreground">Miejsce</span>
+							<span className="font-medium">Kraków, małopolska</span>
+						</div>
+					</section>
 					<SellerCard
 						username="whoyoux"
 						userid="dawawdawd"
 						userimg="https://cdn.discordapp.com/avatars/610202164819787813/5fcd2c21d968841468932f941d541bbe.png"
 						score={9}
 					/>
-					<Button>Contact with seller</Button>
+					<ContactWithSeller />
+					<Alert>
+						<AlertCircle className="h-4 w-4" />
+						<AlertTitle>Uwaga!</AlertTitle>
+						<AlertDescription className="text-muted-foreground">
+							Uważaj na podejrzane aukcje! Niektóre niskie ceny mogą okazać się
+							oszustwem!
+						</AlertDescription>
+					</Alert>
 				</div>
 			</div>
 			<div className="space-y-4">
@@ -99,6 +119,18 @@ const OfferPage = async () => {
 				<DescriptionTest />
 			</div>
 		</div>
+	);
+};
+
+const ContactWithSeller = () => {
+	return (
+		<section className="flex flex-col gap-2 pt-2">
+			<Textarea
+				rows={4}
+				placeholder="Hej, jestem zainteresowany tym przedmiotem. Czy jest on dalej dostępny?"
+			/>
+			<Button>Wyślij wiadomość</Button>
+		</section>
 	);
 };
 
@@ -111,9 +143,9 @@ type SellerCardProps = {
 
 const SellerCard = ({ username, score, userid, userimg }: SellerCardProps) => {
 	return (
-		<section className="w-full flex flex-col space-y-4">
+		<section className="w-full flex flex-col space-y-2">
 			<div className="flex w-full items-center justify-between">
-				<span>Sprzedający</span>
+				<span className="text-muted-foreground">Sprzedający</span>
 				<div className="flex items-center gap-2">
 					<span className="font-medium">{username}</span>
 					<Avatar>
@@ -123,7 +155,7 @@ const SellerCard = ({ username, score, userid, userimg }: SellerCardProps) => {
 				</div>
 			</div>
 			<div className="flex w-full items-center justify-between">
-				<span>Oceny sprzedającego</span>
+				<span className="text-muted-foreground">Ocena sprzedającego</span>
 				<Ratings rating={2.5} variant="yellow" />
 			</div>
 		</section>
